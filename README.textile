@@ -1,0 +1,33 @@
+A tool to embed clojure in HTML
+
+## Usage
+
+Create a template file with the extension clj, with HTML inside it.
+
+Eg: Consider a hammer template file, "template.clj" with the following contents
+
+<div id="test">
+Clojure code starts here. <br />
+1 + 1 = 
+%% (+ 1 1) %%
+</div>
+
+
+As you can see, the clojure code is inside the block demarkated by the symbol %%.
+
+In order to eval the template, you will have to execute the following function
+
+(convert-hammer-template-to-html "template.clj")
+
+This will convert the file "template.clj" to:
+<div id="test">
+Clojure code starts here. <br />
+1 + 1 = 1
+</div>
+
+
+## License
+
+Copyright (C) 2011 Punit Rathore
+
+Distributed under the Eclipse Public License, the same as Clojure.
